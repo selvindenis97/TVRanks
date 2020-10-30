@@ -1,0 +1,39 @@
+<div class="banner" style="
+  background: linear-gradient(
+    to bottom,
+    #eeeeee00,
+    #eeeeeeff
+  ), url('{{movie.backdrop_path | backdrop}}') no-repeat center center fixed;
+  "></div>
+<div class="details-title-container">
+  <h1>{{movie.title}}</h1>
+  <p>{{movie.tagline}}</p>
+
+  <div class="stars-wrapper">
+    <div class="Stars" style="--rating: {{movie.vote_average}};">
+    </div>
+  </div>
+</div>
+<div class="details-container">
+
+  <div class="details-item">
+    <h3>Overview:</h3>
+    <p>{{movie.overview}}</p>
+  </div>
+
+  <div class="details-item">
+    <h3>Genres:</h3>
+    <p>{{ movie.genres | join:'name'}}</p>
+  </div>
+
+  <div class="details-item">
+    <h3>Cast:</h3>
+    <div class="gallery">
+      <div *ngFor="let cast of casts" class="image">
+        <img src="{{ cast.profile_path | profileImage:cast.gender}}">
+        <p>{{cast.name}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

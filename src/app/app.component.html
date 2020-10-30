@@ -1,0 +1,14 @@
+<input type="checkbox" id="hamburger-toggle" [(ngModel)]="navToggle">
+<label class="hamburger-wrapper" for="hamburger-toggle">
+  <span class="hamburger"></span>
+</label>
+<nav class="navbar">
+  <ul class="nav-list">
+    <li><a routerLink="/movies">Movies</a></li>
+    <li><a routerLink="/tv">TV Shows</a></li>
+  </ul>
+</nav>
+<h1 id="pageTitle">{{pageTitle}}</h1>
+<div class="wrapper">
+  <router-outlet></router-outlet>
+</div>

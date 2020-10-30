@@ -1,0 +1,19 @@
+<input class="search-box" type="text" [(ngModel)]="searchTerm" (ngModelChange)="search()" placeholder="Search shows...">
+
+<div *ngIf="tvShows" class="container">
+  <div *ngFor="let show of tvShows" class="card">
+    <a href="tv/details/{{show.id}}">
+      <img src="{{show.poster_path | cardPoster}}">
+    </a>
+    <div class="card-details">
+      <h3>{{show.name}}</h3>
+      <p>
+        {{show.overview | truncate:[100]}}
+      </p>
+      <div class="stars-wrapper">
+        <div class="Stars" style="--rating: {{show.vote_average}};">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
